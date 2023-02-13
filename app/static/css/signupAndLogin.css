@@ -1,0 +1,107 @@
+:root{
+    --bgColor :hsl(213deg 85% 97%);
+    --primaryColor:linear-gradient(-225deg, #E3FDF5 50%, #FFE6FA 50%);
+}
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+.container-fluid{
+    background: var(--bgColor);
+}
+
+.signup-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    width: 900px;
+    /* border: 2px solid red; */
+    margin: 10rem;
+    border-radius: 10px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.left-side{
+    width: 55%;
+    height: 100%;
+    position: relative;
+}
+
+.blurred-image{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    /* background-repeat: no-repeat; */
+    background-position: center;
+    filter: blur(1.5px);
+}
+
+.text-over{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    color: white;
+    transform: translate(-50%, -50%);
+}
+
+.right-side{
+    width: 45%;
+    height: 100%;
+    background: var(--primaryColor);
+}
+
+.form-card{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    margin: 2rem;
+    /* box-shadow: rgb(38, 57, 77) 0px 10px 15px -5px; */
+}
+
+.form-fields{
+    display: flex;
+    flex-direction: column;
+}
+
+.heading{
+    margin-top: 1rem;
+}
+
+input[type='text'], input[type='email'], input[type='password']{
+    margin-bottom: 1rem;
+    width: 300px;
+    padding: .7rem;
+    border-radius: 10px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid gray;
+}
+
+input[type='submit']{
+    margin-top: 1rem;
+    padding: .8rem;
+    width: 50%;
+    align-self: center;
+    border-radius: 5px;
+    background: linear-gradient(-225deg, #FFE6FA 50%, #E3FDF5 50%);
+    border: 1px solid gray;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+}
+
+input[type='submit']:hover{
+    padding: .9rem;
+    background: linear-gradient(-225deg, #fbbeef 50%, #c9fbec 50%);
+    box-shadow: rgb(67, 88, 111) 0px 10px 15px -5px;
+}

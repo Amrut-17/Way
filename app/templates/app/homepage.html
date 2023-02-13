@@ -1,0 +1,37 @@
+{% extends 'app/core.html' %}
+{% block title %}
+    Homepage
+{% endblock title %}
+
+{% block content %}
+    <div class="all-posts">
+        {% for post in posts %}
+        <div class="post-card">
+            <div class="post-image">
+                <img src="{{post.postPic.url}}" alt="Post Image" >
+            </div>
+            <div class="post-text">
+                <div class="post-title">
+                    <h3>{{post.title}}</h3>
+                </div>
+                <div class="post-author">
+                    <strong> @{{post.author.username}}</strong>
+                </div>
+                <div class="post-desc">
+                    {{post.desc|truncatewords:10}}
+                    <a href="/postdetail/{{post.id}}/">read more</a>
+                </div>
+                <div class="post-date">
+                    <div class="created">
+                        {{post.created_at}}
+                    </div>
+                    <div class="updated">
+                        {{updated_at}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock content %}
+

@@ -1,0 +1,43 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <title>Bootstrap demo</title>
+    
+  </head>
+  <body>
+    <div class="nav">
+        <div class="navbar">
+            <div class="left-nav">
+                <h2><a href="/">Way</a></h2>
+            </div>
+            <div class="right-nav">
+                <ul class="nav-ul">                    
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a href="/addpost" class='item'>Create Post</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class='item'>{{user.username|capfirst}}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/signout" class='item'>SignOut</a>
+                    </li>
+
+                    {% else %}
+                    <li class="nav-item">
+                        <a href="signin" class='item'>SignIn</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="signup" class='item'>SignUp</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

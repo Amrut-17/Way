@@ -1,0 +1,58 @@
+{% extends 'app/core.html' %}
+{% load static %}
+{% block links %}
+<link rel="stylesheet" href="{% static 'css/postDetails.css' %}">
+{% endblock links %}
+
+
+{% block title %}
+    Way|
+{% endblock title %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="inner-area">
+            <div class="post-selected">
+                <div class="post-heading">
+                    {{post.title}}
+                </div>
+                <div class="post-info">
+                    <div class="post-author">
+                        <strong> @{{post.author.username}}</strong>
+                    </div>
+                    <div class="post-log">
+                        {{post.created_at}}
+                    </div>
+                </div>
+                <div class="post-picture">
+                    <img src="{{post.postPic.url}}" alt="Post Image" >
+                </div>
+                <div class="post-desc">
+                    {{post.desc}}
+                </div>
+            </div>
+
+            <div class="remaining-posts">
+                <div class="post-slider">
+                    {% for rpost in all_posts %}
+                    <div class="post-card">
+                        <div class="title">
+                            {{rpost.title}}
+                        </div>
+                        <div class="author">
+                            @{{rpost.author.username}}
+                        </div>
+                        <div class="desc">
+                            {{rpost.desc|truncatewords:10}}
+                            <a href="/postdetail/{{rpost.id}}/">read more</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+
+
